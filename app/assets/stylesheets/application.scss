@@ -1,2 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+//= require_tree
+//= require_self
+
+body{
+  margin: -15px;
+}
+
+.loginPage{
+//  display: grid;
+ text-align: center;
+ padding: 5px;
+ margin: 2px;
+}
+
+.signUp{
+  text-align: center;
+  padding: 5px;
+  margin: 2px;
+}
