@@ -7,11 +7,33 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, intitial-scale=1">
   </head>
 
   <body>
       <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+
+       <header class="container">
+       <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <%= link_to "My Account", root_path, class: "navbar-brand"%>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <%if signed_in?%>
+              <li><%=link_to "balance",root_path %></li>
+              <li><%=link_to "Add Account",new_account_path %></li>
+              <li><%=link_to "Sign Out",destroy_user_session_path, method: :delete %></li>
+              <%else%>
+              <li><%=link_to "Sign in", new_user_session_path %></li>
+            <%end%>
+          </ul>
+        </div>
+       </nav>
+
+       <header>
     <%= yield %>
   </body>
 </html>
